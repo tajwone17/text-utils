@@ -30,13 +30,13 @@ function App() {
       document.body.style.backgroundColor = '#042743';
       document.body.style.color = 'white';
       showAlert("Dark Mode has been enabled", "success");
-      document.title = 'TextUtils - Dark Mode';
+      // document.title = 'TextUtils - Dark Mode';
     } else {
       setMode("light");
       document.body.style.backgroundColor = 'white';
       document.body.style.color = '#042743';
       showAlert("Light Mode has been enabled", "success");
-      document.title = 'TextUtils - Light Mode';
+      // document.title = 'TextUtils - Light Mode';
     }
   };
 
@@ -46,8 +46,8 @@ function App() {
         <Navbar mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes> {/* Replaced Switch with Routes */}
-          <Route exact path="/about" element={<About />} /> {/* Updated route structure */}
-          <Route exact path="/" element={<TextForm heading="Enter the text to analyze below " mode={mode} showAlert={showAlert} />} />
+          <Route exact path="/about" element={<About mode={mode}/>} /> {/* Updated route structure */}
+          <Route exact path="/" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces, Remove Double Words" mode={mode} showAlert={showAlert} />} />
         </Routes>
       </Router>
     </div>
